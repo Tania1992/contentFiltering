@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS wordFrequency;
+DROP TABLE IF EXISTS trainingSet;
+
+CREATE TABLE trainingSet (
+  s_no INT AUTO_INCREMENT  PRIMARY KEY,
+  text VARCHAR(250) NOT NULL,
+  category VARCHAR(250) NOT NULL
+);
+
+  CREATE TABLE wordFrequency (
+  s_no INT AUTO_INCREMENT  PRIMARY KEY,
+  word VARCHAR(250) NOT NULL,
+  count int NOT NULL,
+  category VARCHAR(250) NOT NULL
+);
