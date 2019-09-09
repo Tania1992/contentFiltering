@@ -10,6 +10,6 @@ CREATE TABLE trainingSet (
   CREATE TABLE wordFrequency (
   s_no INT AUTO_INCREMENT  PRIMARY KEY,
   word VARCHAR(250) NOT NULL,
-  count int NOT NULL,
+  frequency int NOT NULL,
   category VARCHAR(250) NOT NULL
 );

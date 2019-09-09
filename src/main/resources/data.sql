@@ -4,7 +4,7 @@ INSERT INTO trainingSet (text, category) VALUES
   ('Quality is nice', 'ham'),
   ('Get flat 40% off', 'spam');
   
-  INSERT INTO wordFrequency (word, count, category) VALUES
+  INSERT INTO wordFrequency (word, frequency, category) VALUES
   ('get', 2 , 'spam'),
   ('product', 1 , 'ham'),
   ('flat', 1, 'spam'),

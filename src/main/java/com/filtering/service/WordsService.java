@@ -14,20 +14,21 @@ public class WordsService {
 	public boolean checkSpam(String text)
 	{
 		String words[] = text.split(" ");
-		int hamFrequency =0;
-		int spamFrequency = 0;
-		int totalSpamFrequency = 0;
-		int totalHamFrequency = 0;
+		double hamFrequency =0;
+		double spamFrequency = 0;
+		double totalSpamFrequency = 0;
+		double totalHamFrequency = 0;
 		totalSpamFrequency = wordsdao.totalWords("spam");
 		totalHamFrequency = wordsdao.totalWords("ham");
+		double totalWords = totalHamFrequency + totalSpamFrequency;
 		for(int i=0;i<words.length;i++)
 		{
 			hamFrequency = hamFrequency + wordsdao.checkFrequency(words[i].toLowerCase(), "ham");
 			spamFrequency = spamFrequency + wordsdao.checkFrequency(words[i].toLowerCase(), "spam");
 		}
 		
-		double hamProbability = hamFrequency%totalHamFrequency;
-		double spamProbability = spamFrequency%totalSpamFrequency;
+		double hamProbability = hamFrequency/(totalHamFrequency + totalWords);
+		double spamProbability = spamFrequency/(totalSpamFrequency + totalWords);
 		
 		if(hamProbability>spamProbability)
 		{
